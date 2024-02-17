@@ -1,0 +1,72 @@
+.info{
+    min-width: 400px;
+    box-shadow: 0 2px 5px black;
+}
+
+@media screen and (max-width: 850px){
+    .info{
+        min-width: 0;
+        width: 100%;
+    }
+}
+
+.title{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.temp{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.cardContent{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chartContainer {
+    display: flex;
+    align-items: flex-end;
+    overflow-x: auto;
+    gap: 5px;
+    padding: 10px;
+
+    box-shadow: 0 2px 5px black;
+    border-radius: 4px;
+
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+.chartContainer::-webkit-scrollbar {
+    height: 8px; /* Висота скролбару */
+}
+
+.chartContainer::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Колір доріжки скролбару */
+}
+
+.chartContainer::-webkit-scrollbar-thumb {
+    background: #888; /* Колір самого скролбару */
+}
+
+.chartContainer::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Колір скролбару при наведенні */
+}
+
+.barContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    border-radius: 4px;
+    padding: 4px 6px;
+}
+
+.hour {
+    margin-top: 4px;
+    border-top: 1px solid white;
+}

@@ -7,3 +7,15 @@ export type WeatherCardProps = {
   cities: string[];
   setCities: Dispatch<SetStateAction<string[]>>;
 };
+
+export type CityPageProps = {
+  params: { cityName: string };
+};
+
+export type FullCityWeatherProps = {
+  cityName: string;
+};
+
+export type TemperatureChartProps = {
+  cityName: string;
+};

@@ -2,12 +2,12 @@
 
 import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
-import WeatherCard from "@/components/shared/WeatherCard";
 
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
 import styles from "./weatherSection.module.css";
+import WeatherCard from "@/components/shared/weatherHome/WeatherCard";
 
 const WeatherSection = () => {
   const [cities, setCities] = useState<string[]>([]);
