@@ -1,0 +1,65 @@
+.weatherSection{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    width: 100%;
+}
+
+.weatherCardsBlock{
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    width: 100%;
+}
+
+.weatherCard{
+    min-width: 200px;
+    position: relative;
+}
+
+@media screen and (max-width: 530px){
+    .weatherCardWrapper{
+        width: 100%;
+    }
+}
+
+.weatherCardWrapper {
+    box-shadow: 1px 4px 10px black;
+}
+
+.weatherCardTitleBlock {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.weatherCardTitleBlock > img{
+    background-color: slategray;
+    border-radius: 50%;
+    padding: 1px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    margin: 8px;
+}
+
+.container > button {
+    min-width: max-content;
+}
+
+.textField {
+    margin-right: 8px;
+    max-width: 350px;
+    width: 100%;
+}
+
+.weatherCardError {
+    background-color: red;
+    color: white;
+    padding: 4px 7px;
+}
