@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { TemperatureChartProps, WeatherData } from "@/types";
 import { useHourlyWeather } from "@/lib/hooks/useHourlyWeather";
 import { Box, Typography } from "@mui/material";
