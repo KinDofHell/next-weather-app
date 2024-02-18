@@ -6,7 +6,6 @@ import TemperatureChart from "@/components/shared/cityPage/TemperatureChart";
 
 const { expect, describe, it } = require("@jest/globals");
 
-// Мок хука useHourlyWeather
 jest.mock("@/lib/hooks/useHourlyWeather");
 
 const mockedUseHourlyWeather = useHourlyWeather as jest.Mock;

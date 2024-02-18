@@ -1,11 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { KeyboardEvent } from "react";
+import { useEffect, useState, useCallback } from "react";
 import Cookies from "js-cookie";
-
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-
 import styles from "./weatherSection.module.css";
 import WeatherCard from "@/components/shared/weatherHome/WeatherCard";
 
@@ -18,17 +17,28 @@ const WeatherSection = () => {
     setCities(savedCities);
   }, []);
 
-  const handleAddCity = () => {
-    if (!newCity) return;
-    if (cities.find((city) => city === newCity)) {
+  const handleAddCity = useCallback(() => {
+    const trimmedCity = newCity.trim();
+    if (!trimmedCity) return;
+    if (cities.includes(trimmedCity)) {
+      alert(`${trimmedCity} is already added.`);
       setNewCity("");
       return;
     }
-    const updatedCities = [...cities, newCity];
+    const updatedCities = [...cities, trimmedCity];
     setCities(updatedCities);
     Cookies.set("cities", JSON.stringify(updatedCities), { expires: 7 });
     setNewCity("");
-  };
+  }, [newCity, cities]);
+
+  const handleKeyPress = useCallback(
+    (event: KeyboardEvent) => {
+      if (event.key === "Enter") {
+        handleAddCity();
+      }
+    },
+    [handleAddCity],
+  );
 
   return (
     <section className={styles.weatherSection}>
@@ -39,6 +49,7 @@ const WeatherSection = () => {
           variant="outlined"
           value={newCity}
           onChange={(e) => setNewCity(e.target.value)}
+          onKeyDown={handleKeyPress}
           size="small"
         />
         <Button variant="contained" onClick={handleAddCity}>
@@ -58,4 +69,5 @@ const WeatherSection = () => {
     </section>
   );
 };
+
 export default WeatherSection;

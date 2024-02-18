@@ -4,7 +4,6 @@ import "@testing-library/jest-dom";
 import WeatherCard from "../../components/shared/weatherHome/WeatherCard";
 const { expect, describe, it } = require("@jest/globals");
 
-// Mock для useWeather hook
 jest.mock("../../lib/hooks/useWeather", () => ({
   useWeather: () => ({
     weather: {
@@ -41,6 +40,4 @@ describe("WeatherCard", () => {
     fireEvent.click(screen.getByText("Delete"));
     await waitFor(() => expect(mockSetCities).toHaveBeenCalledTimes(1));
   });
-
-  // Додайте додаткові тести за потреби
 });
